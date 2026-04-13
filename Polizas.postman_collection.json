@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "ef9fbd97-52c3-48e5-93bc-292cd1ebf3b1",
+		"name": "Polizas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27207367"
+	},
+	"item": [
+		{
+			"name": "POST /polizas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "123456",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"tipo\": \"INDIVIDUAL\",\r\n  \"canonMensual\": 1000000,\r\n  \"prima\": 12000000,\r\n  \"mesesVigencia\": 12,\r\n  \"riesgos\": [\r\n    {\r\n      \"descripcion\": \"Robo\",\r\n      \"estado\": \"ACTIVO\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/polizas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"polizas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /polizas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "123456",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/polizas?tipo=COLECTIVA&estado=ACTIVA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"polizas"
+					],
+					"query": [
+						{
+							"key": "tipo",
+							"value": "COLECTIVA"
+						},
+						{
+							"key": "estado",
+							"value": "ACTIVA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /polizas/{id}/riesgos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "123456",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/polizas/1/riesgos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"polizas",
+						"1",
+						"riesgos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /polizas/{id}/renovar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "123456",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/polizas/2/renovar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"polizas",
+						"2",
+						"renovar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /polizas/{id}/cancelar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "123456",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/polizas/1/cancelar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"polizas",
+						"1",
+						"cancelar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /polizas/{id}/riesgos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "123456",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"descripcion\":\"nueva\",\r\n        \"estado\": \"ACTIVO\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/polizas/1/riesgos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"polizas",
+						"1",
+						"riesgos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /riesgos/{id}/cancelar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "123456",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/riesgos/1/cancelar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"riesgos",
+						"1",
+						"cancelar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Prueba sin api key",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"tipo\": \"COLECTIVA\",\r\n  \"canonMensual\": 1000000,\r\n  \"mesesVigencia\": 12,\r\n  \"riesgos\": [\r\n    {\r\n      \"descripcion\": \"Robo\",\r\n      \"estado\": \"ACTIVO\"\r\n    },\r\n    {\r\n        \"descripcion\":\"daw\",\r\n        \"estado\": \"ACTIVO\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/polizas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"polizas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
